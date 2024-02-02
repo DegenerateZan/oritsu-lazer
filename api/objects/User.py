@@ -7,15 +7,15 @@ class User:
         self.token = token
     
     @classmethod
-    def user_exists(self, username:str) -> bool:
+    def user_exists(cls, username:str) -> bool:
         '''
         Checks whether the specified username exists in the database.
         '''
-        user = db.fetch_one("SELECT * FROM users WHERE name = %s", (username,))
+        user = db.fetch_one("SELECT * FROM users WHERE safe_name = %s", (username.lower(),))
         return user is not None
 
     @classmethod
-    def email_exists(self, email:str) -> bool:
+    def email_exists(cls, email:str) -> bool:
         '''
         Checks whether the specified email exists in the database.
         '''
@@ -24,7 +24,7 @@ class User:
 
     
     @classmethod
-    def get(self, cls, username:str, email:str, token:str) -> 'User':
+    def get(cls, username:str, email:str, token:str) -> 'User':
         return cls(
             username=username,
             email=email,
