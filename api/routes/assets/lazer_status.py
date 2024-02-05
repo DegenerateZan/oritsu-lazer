@@ -1,9 +1,9 @@
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter
 
-assets_route = APIRouter(prefix="")
+router = APIRouter()
 
 # Used to show the bottom image on the main menu.
-@assets_route.get("/lazer-status.json")
+@router.get("/lazer-status.json")
 def assetsroute() -> dict:
     return {
         "image": "https://assets.ppy.sh/main-menu/community-choice-2023@2x.png",
