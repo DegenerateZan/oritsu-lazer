@@ -1,3 +1,7 @@
-### Just a (very) experimental backend of osu!lazer, made in Python.
+### Just an experimental proof-of-concept backend of osu!lazer, made in Python.
+### Feel free to contribute to the project.
 
-#### Feel free to contribute to the project.
+
+##### Current features:
+- Login (In progress)
+- Registration (In progress)
